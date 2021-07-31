@@ -1,18 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Feature
 
 
 # Create your views here.
 def index(request):
-    # name= 'John'
-    # we create  a dictionary so that we can add more files
-    # lets create a dictonary called context and add aall our data therer
-    # context = {
-    #     'name':'PATRICK',
-    #     'age':'21',
-    #     'nationality':'kenyan'
-    # }
-    return render(request, 'index.html')
+    feature1 = Feature()
+    feature1.id = 0
+    feature1.name = 'Fast'
+    feature1.details = 'Our services are quick'
+    return render(request, 'index.html', {'feature': feature1})
 
 
 def counter(request):
