@@ -48,3 +48,4 @@ def counter(request):
     text = request.GET['text']
     number_of_words = len(text.split())
     return render(request, 'counter.html', {'amount': number_of_words})
+
