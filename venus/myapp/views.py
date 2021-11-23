@@ -12,8 +12,17 @@ def index(request):
     #     'age':'21',
     #     'nationality':'kenyan'
     # }
+    return render(request, 'index1.html')
+def index1(request):
+    # name= 'John'
+    # we create  a dictionary so that we can add more files
+    # lets create a dictonary called context and add aall our data therer
+    # context = {
+    #     'name':'PATRICK',
+    #     'age':'21',
+    #     'nationality':'kenyan'
+    # }
     return render(request, 'index.html')
-
 
 def counter(request):
     # this gets the words from the name of the form in the index.html
