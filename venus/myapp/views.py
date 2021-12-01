@@ -12,7 +12,7 @@ def index(request):
     #     'age':'21',
     #     'nationality':'kenyan'
     # }
-    return render(request, 'index1.html')
+    return render(request, 'index.html')
 def index1(request):
     # name= 'John'
     # we create  a dictionary so that we can add more files
@@ -22,11 +22,11 @@ def index1(request):
     #     'age':'21',
     #     'nationality':'kenyan'
     # }
-    return render(request, 'index.html')
+    return render(request, 'index1.html')
 
 def counter(request):
     # this gets the words from the name of the form in the index.html
     # if e change the name of the text are , we have o change the variable as well
-    words = request.GET['words']
-    amount_of_words = len(words.split())
+    word = request.GET['words']
+    amount_of_words = len(word.split())
     return render(request, 'counter.html',{'amount':amount_of_words})
