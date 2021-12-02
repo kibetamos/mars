@@ -23,6 +23,11 @@ def index1(request):
     #     'nationality':'kenyan'
     # }
     return render(request, 'index1.html')
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
 
 def counter(request):
     # this gets the words from the name of the form in the index.html
