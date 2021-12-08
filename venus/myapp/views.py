@@ -24,14 +24,16 @@ def index1(request):
 
 def register(request):
     if request.method == "POST":
+        form = NewUserForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, "Registration successful")
-            return redirect("login")
+            messages.success(request, "Registration successful.")
+            return redirect("index")
         messages.error(request, "Unsuccessful registration. Invalid information.")
-        form = NewUserForm()
-        return render(request=request, template_name="main/register.html", context={"register_form": form})
+    form = NewUserForm()
+    return render(request=request, template_name="templates/main/register.html", context={"register_form": form})
+
 
 
 def login(request):
