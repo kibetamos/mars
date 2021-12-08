@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib import messages
 from .forms import NewUserForm
+from django.contrib.auth.forms import AuthenticationForm #add this
+from django.contrib.auth import login, authenticate #add this
+
 
 
 # Create your views here.
@@ -46,13 +49,13 @@ def login(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
-                return redirect("main:homepage")
+                return redirect("index")
             else:
                 messages.error(request, "Invalid username or password.")
         else:
             messages.error(request, "Invalid username or password.")
     form = AuthenticationForm()
-    return render(request=request, template_name="main/login.html", context={"login_form": form})
+    return render(request=request, template_name="templates/main/login.html", context={"login_form": form})
 
 def counter(request):
     # this gets the words from the name of the form in the
