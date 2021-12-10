@@ -45,6 +45,20 @@ def register(request):
     else:
         return render(request, 'register.html')
 
+def login(request):
+    if requestmethod == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username = username, password = password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.info(request, 'CredentialS Invalid')
+            return redirect('login')
+    else:
+        return render(request, 'login.html')
 
 def counter(request):
     # this gets the words from the name of the form in the
