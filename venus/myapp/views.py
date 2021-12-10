@@ -27,7 +27,23 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
-    return render(request, 'register.html')
+
+        if password == password2:
+            if User.objects.filter(email=email).exists():
+                messages.info(request, 'Email is already used')
+                return redirect('register')
+            elif User.objects.filter(username=username).exists():
+                messages.info(request, 'Username already in use')
+                return redirect('register')
+            else:
+                user = User.objects.create_user(username=username, email=email, password=password)
+                user.save();
+                return redirect('login')
+        else:
+            messages.info(request, 'Password Not The Same')
+            return redirect('register')
+    else:
+        return render(request, 'register.html')
 
 
 def counter(request):
