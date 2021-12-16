@@ -294,8 +294,20 @@
                 <h4>Designer</h4>
               </div>
             </div><!-- End testimonial item -->
+<!--<div class="row icon-boxes">-->
+<!--        {% for feature in features %}-->
+<!--        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">-->
+<!--          <div class="icon-box">-->
+<!--            <div class="icon"><i class="ri-stack-line"></i></div>-->
+<!--            <h4 class="title"><a href="">{{feature.name}}</a></h4>-->
+<!--            <p class="description">{{feature.details}}</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
 
+<!--      </div>-->
             <div class="swiper-slide">
+              {% for feature in features %}
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -303,10 +315,11 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
+                <h3>{{feature.name}}</h3>
+
               </div>
             </div><!-- End testimonial item -->
+
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -340,7 +353,7 @@
 
       </div>
     </section><!-- End Testimonials Section -->
-
+ {% endfor %}
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
@@ -896,12 +909,12 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>OnePage</h3>
+            <h3>ArkTech</h3>
             <p>
               A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
+              001-00001 NAIROBI<br>
+              KENYA<br><br>
+              <strong>Phone:</strong> +2541234567<br>
               <strong>Email:</strong> info@example.com<br>
             </p>
           </div>

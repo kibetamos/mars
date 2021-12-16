@@ -7,7 +7,7 @@
   */
 
   // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+  $receiving_email_address = 'abcdef101198@gmail.com';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
     include( $php_email_form );
@@ -30,6 +30,10 @@
     'username' => 'example',
     'password' => 'pass',
     'port' => '587'
+    EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '043bb0ff155a2b'
+EMAIL_HOST_PASSWORD = '53b50efd30becf'
+EMAIL_PORT = '2525'
   );
   */
 
