@@ -1,2 +1,2 @@
 ## mars
-This is a simple python programme
+This is a python project of THe ark company
