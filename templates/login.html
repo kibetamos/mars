@@ -1,0 +1,17 @@
+{% for message in messages %}
+<h5>{{message}}</h5>
+{%endfor%}
+<div class="container py-5">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <p>Username:</p>
+    <input type="text" name="username">
+    <p>Password:</p>
+    <input type="password" name="password">
+    </br>
+    <input type="submit"/>
+  </form>
+<!--  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>-->
+</div>
+
