@@ -66,3 +66,11 @@ def counter(request):
     word = request.GET['words']
     amount_of_words = len(word.split())
     return render(request, 'counter.html', {'amount': amount_of_words})
+
+
+def instagram(request):
+    # this gets the words from the name of the form in the
+    # if e change the name of the text are , we have o change the variable as well
+    # word = request.GET['words']
+    # amount_of_words = len(word.split())
+    return render(request, 'instagram.html')
