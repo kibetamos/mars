@@ -8,6 +8,7 @@ urlpatterns = [
     path('login', views.login, name="login"),
     path('home', views.home, name='home'),
     path('counter', views.counter, name='counter'),
+    path('instagram', views.instagram, name='instagram'),
 
 
 ]
