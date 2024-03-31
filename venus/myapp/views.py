@@ -19,6 +19,7 @@ def index(request):
     #     'age':'21',
     #     'nationality':'kenyan'
     # }
+    
     return render(request, 'index.html')
 
 
