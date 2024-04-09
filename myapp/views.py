@@ -6,8 +6,8 @@ from .models import Feature
 from django.http import HttpResponse
 from django.shortcuts import render
 from pytube import YouTube
-
-
+from rembg import remove
+from PIL import Image
 
 # Create your views here.
 def index(request):
@@ -19,6 +19,7 @@ def index(request):
     #     'age':'21',
     #     'nationality':'kenyan'
     # }
+
     return render(request, 'index.html')
 
 
@@ -103,3 +104,26 @@ def download_video(request):
         response['Content-Disposition'] = f'attachment; filename="{filename}"'
 
     return response
+
+
+
+def remove_background(image_path, output_image, **kwargs):
+    """
+    Function to remove background from an image using rembg library.
+    
+    Args:
+        image_path (str): Path to the input image.
+        output_image (str): Name of the output image file.
+        **kwargs: Additional keyword arguments to pass to the `remove` function.
+        
+    Returns:
+        None
+    """
+    input_image = Image.open(image_path)
+    output_image = remove(input_image, **kwargs)
+    output_image.save(output_image)
+
+# Example usage:
+image_path = 'input_image.png'
+output_image = 'output_image.png'
+remove_background(image_path, output_image)
