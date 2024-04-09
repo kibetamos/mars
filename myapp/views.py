@@ -105,8 +105,6 @@ def download_video(request):
 
     return response
 
-
-
 def remove_background(image_path, output_image, **kwargs):
     """
     Function to remove background from an image using rembg library.
