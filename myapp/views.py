@@ -9,6 +9,7 @@ from pytube import YouTube
 from rembg import remove
 from PIL import Image
 import os
+import instaloader
 
 
 # Create your views here.
@@ -78,12 +79,12 @@ def counter(request):
     return render(request, 'counter.html', {'amount': amount_of_words})
 
 
-def instagram(request):
-    # this gets the words from the name of the form in the
-    # if e change the name of the text are , we have o change the variable as well
-    # word = request.GET['words']
-    # amount_of_words = len(word.split())
-    return render(request, 'instagram.html')
+# def instagram(request):
+#     # this gets the words from the name of the form in the
+#     # if e change the name of the text are , we have o change the variable as well
+#     # word = request.GET['words']
+#     # amount_of_words = len(word.split())
+#     return render(request, 'instagram.html')
 
 def youtube(request):
     if request.method == 'POST':
