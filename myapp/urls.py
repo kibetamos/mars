@@ -10,6 +10,7 @@ urlpatterns = [
     path('counter', views.counter, name='counter'),
     path('instagram', views.instagram, name='instagram'),
     path('youtube', views.youtube, name='youtube'),
+    
 
 
 ]
