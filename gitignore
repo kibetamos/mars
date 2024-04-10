@@ -1,3 +1,10 @@
 env/
 .env/
 virual
+.env
+env/
+env
+.env/
+/storage
+# Ignore the storage directory and its contents
+/storage/*
