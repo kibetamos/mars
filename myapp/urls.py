@@ -9,7 +9,7 @@ urlpatterns = [
     path('home', views.home, name='home'),
     path('counter', views.counter, name='counter'),
     path('instagram', views.instagram, name='instagram'),
-    path('youtube', views.instagram, name='youtube'),
+    path('youtube', views.youtube, name='youtube'),
 
 
 ]

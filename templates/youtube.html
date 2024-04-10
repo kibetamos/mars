@@ -36,13 +36,34 @@
 </head>
 
 <body>
-
+    <section id="youtube-download" class="youtube-download section-bg">
+        <div class="container" data-aos="fade-up">
+    
+          <div class="section-title">
+            <h2>Download YouTube Video</h2>
+            <p>Enter the URL of the YouTube video you want to download:</p>
+          </div>
+    
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <form action="{% url 'youtube' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <input type="text" class="form-control" id="video_url" name="video_url" placeholder="Enter YouTube Video URL" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Download</button>
+              </form>
+            </div>
+          </div>
+    
+        </div>
+      </section>
 <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
         <div class="container" data-aos="fade-up">
   
           <div class="section-title">
-            <h2>Download Instagram Posts</h2>
+            <h2>Download Youtube</h2>
             <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
           </div>
   

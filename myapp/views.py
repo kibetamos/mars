@@ -84,28 +84,39 @@ def instagram(request):
     return render(request, 'instagram.html')
 
 def youtube(request):
-    # Enter the YouTube video URL
-    url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    if request.method == 'POST':
+        # Get the YouTube video URL from the user input
+        url = request.POST.get('video_url')
 
-    # Create a YouTube object with the URL
-    yt = YouTube(url)
+        try:
+            # Create a YouTube object with the URL
+            yt = YouTube(url)
 
-    # Select the highest resolution video
-    video = yt.streams.get_highest_resolution()
+            # Select the highest resolution video
+            video = yt.streams.get_highest_resolution()
 
-    # Set the output directory and filename
-    output_dir = "/storage/emulated/0/Documents/"
-    filename = yt.title + ".mp4"
+            # Set the output directory and filename
+            output_dir = "/home/amos/projects/mars/venus/storage"
+            filename = yt.title + ".mp4"
+            filepath = os.path.join(output_dir, filename)
 
-    # Download the video
-    video.download(output_dir, filename)
+            # Download the video
+            video.download(output_dir, filename)
 
-    # Prepare the response
-    with open(output_dir + filename, 'rb') as video_file:
-        response = HttpResponse(video_file.read(), content_type='video/mp4')
-        response['Content-Disposition'] = f'attachment; filename="{filename}"'
+            # Prepare the response
+            with open(filepath, 'rb') as video_file:
+                response = HttpResponse(video_file.read(), content_type='video/mp4')
+                response['Content-Disposition'] = f'attachment; filename="{filename}"'
+            
+            # Return the response
+            return response
 
-    return response
+        except Exception as e:
+            # Handle errors, for example, if the URL is invalid or download fails
+            return HttpResponse("Error: " + str(e))
+
+    return render(request, 'youtube.html')
+
 
 # def remove_background(image_path, output_image, **kwargs):
 #     """
