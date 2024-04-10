@@ -66,6 +66,7 @@ def login(request):
     else:
         return render(request, 'login.html')
 
+
 def counter(request):
     # this gets the words from the name of the form in the
     # if e change the name of the text are , we have o change the variable as well
