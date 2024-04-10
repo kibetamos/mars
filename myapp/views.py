@@ -65,6 +65,6 @@ def counter(request):
     # if e change the name of the text are , we have o change the variable as well
     word = request.GET['words']
 
-    amount_of_words = len(word.split())
-    
-    return render(request, 'counter.html', {'amount': amount_of_words})
+    number = len(word.split())
+
+    return render(request, 'counter.html', {'amount': number})
