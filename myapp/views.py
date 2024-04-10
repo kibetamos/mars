@@ -8,6 +8,7 @@ from django.shortcuts import render
 from pytube import YouTube
 from rembg import remove
 from PIL import Image
+import os
 
 # Create your views here.
 def index(request):
