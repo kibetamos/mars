@@ -10,6 +10,7 @@ from rembg import remove
 from PIL import Image
 import os
 
+
 # Create your views here.
 def index(request):
     # name= 'John'
