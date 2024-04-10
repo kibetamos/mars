@@ -83,7 +83,7 @@ def instagram(request):
     # amount_of_words = len(word.split())
     return render(request, 'instagram.html')
 
-def download_video(request):
+def youtube(request):
     # Enter the YouTube video URL
     url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
@@ -107,23 +107,23 @@ def download_video(request):
 
     return response
 
-def remove_background(image_path, output_image, **kwargs):
-    """
-    Function to remove background from an image using rembg library.
+# def remove_background(image_path, output_image, **kwargs):
+#     """
+#     Function to remove background from an image using rembg library.
     
-    Args:
-        image_path (str): Path to the input image.
-        output_image (str): Name of the output image file.
-        **kwargs: Additional keyword arguments to pass to the `remove` function.
+#     Args:
+#         image_path (str): Path to the input image.
+#         output_image (str): Name of the output image file.
+#         **kwargs: Additional keyword arguments to pass to the `remove` function.
         
-    Returns:
-        None
-    """
-    input_image = Image.open(image_path)
-    output_image = remove(input_image, **kwargs)
-    output_image.save(output_image)
+#     Returns:
+#         None
+#     """
+#     input_image = Image.open(image_path)
+#     output_image = remove(input_image, **kwargs)
+#     output_image.save(output_image)
 
-# Example usage:
-image_path = 'input_image.png'
-output_image = 'output_image.png'
-remove_background(image_path, output_image)
+# # Example usage:
+# image_path = 'input_image.png'
+# output_image = 'output_image.png'
+# remove_background(image_path, output_image)
